@@ -1,0 +1,43 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    margin-top: 90px;
+}
+
+.bottom-navbar-content{
+    background: white;
+}
+.navbar-default{
+    background-image: linear-gradient(to bottom,#086ed5,#055db5);
+}
+
+.navbar-nav a{
+    color: white !important;
+}
+
+.thumbnail img {
+    height: 150px;
+}
+
+.thumbnail .items-details {
+    height: 3em;
+    overflow-y: auto;
+}
+
+tr.removed {
+    color: darkgray;
+    text-decoration: line-through;
+}
+
+.dropdown-menu{
+    background: white;
+    color:black;
+    padding-left:10px;
+    padding-right:10px;
+    margin-top:80px;
+    width: 300px;
+}
+
+#footer{
+    margin-bottom: 0;
+}

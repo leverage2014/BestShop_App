@@ -1,0 +1,37 @@
+
+<div ng-controller="shopping" style="height: 400px">
+    <h3>Order Details</h3>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--<tr ng-repeat="line in mall.shoppingCart.lines" ng-class="{removed: line.quantity <= 0}">-->
+        <tr ng-repeat="cartRow in myCart.cartRows">
+            <!--<tr ng-repeat="line in mall.items">-->
+            <td>{{cartRow.productId}}</td>
+            <td>{{cartRow.label}}</td>
+            <td>{{cartRow.price | currency}}</td>
+            <td><span class="btn btn-primary btn-sm" ng-click="decrementQuantity(cartRow)">
+                    <i class="glyphicon glyphicon-minus"></i></span>
+                        {{cartRow.quantity}}
+                <span class="btn btn-primary btn-sm" ng-click="incrementQuantity(cartRow)">
+                    <i class="glyphicon glyphicon-plus"></i></span>
+            </td>
+            <td><span class="btn btn-primary" ng-click="removeFromCart(cartRow)">
+                <i class="glyphicon glyphicon-remove"></i>Remove</span>
+            </td>
+        </tr>
+
+        <tr><td colspan="5" align="right">Total price: {{myCart.totalPrice | currency}}</td></tr>
+        <tr><td colspan="5" align="right"><button class="btn btn-primary" ng-click="checkOut()">Checkout</button></td></tr>
+        </tbody>
+    </table>
+</div>

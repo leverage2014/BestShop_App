@@ -1,0 +1,114 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="topBarModalCtrl">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand"><img src="images/logo.png" style="height: 40px"></a>
+        </div>
+
+        <form class="navbar-form navbar-right" role="search" style="margin-top:20px">
+            <div class="form-group input-group">
+                <input type="text" class="form-control" placeholder="Search....">
+            </div> &nbsp;
+            <a href="#"><span class="glyphicon glyphicon-search" style="color: white;"></span></a>
+        </form>
+
+        <ul class="nav navbar-nav navbar-right" style="margin-top:10px">
+            <li><a href="#" ng-hide="!logIn"> Welcome back, {{user.name}}!</a></li>
+
+            <li ng-hide="logIn"><a href="#"><span class="glyphicon glyphicon-user"></span><span ng-click="registerOpen()"> Register </span></a></li>
+            <li ng-hide="logIn"><a href="#" ng-click="signInopen()">Login</a></li>
+            <li ng-hide="!logIn"><a href="#" ng-click="signOut()"><span class="glyphicon glyphicon-remove"></span><span> Sign out </span></a></li>
+
+            <!--<li ng-hide="logIn"><a href="#" ng-click="alert('hahhah')">Login</a></li>-->
+            <!--<li><a ui-sref="home.products({productType:0})">products</a></li>-->
+            <!--<li><a ui-sref="home.myOrder">order</a></li>-->
+
+            <!-- myCart 下拉菜单 -->
+            <li class="dropdown" ng-hide="!logIn">
+
+                <!-- cart为空的时候cart不能点击!!??  -->
+                <!--<a href="#" ng-class='dropdown-toggle' data-toggle="dropdown" id="myCart">-->
+                <a href="#" data-toggle="dropdown" id="myCart">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                    <!--<span ng-click="showCart()"> My Cart </span>-->
+                    <span ng-click="showCart()"> My Cart </span>
+                </a>
+
+                <ul class="dropdown-menu" id="myCartDetails" ng-if="myCart.cartRows.length!=0">
+
+                    <li>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr><th>Name</th><th>Qt.</th></tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="cartRow in myCart.cartRows" class="info"><td>{{cartRow.label}}</td><td>{{cartRow.quantity}}</td></tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li class="divider"></li>
+                    <li>Total price: {{myCart.totalPrice | currency}}</li>
+                    <li class="divider"></li>
+                    <li><button class="btn btn-link" ui-sref="home.myOrder">Goto my cart</button><button>Checkout</button></li>
+                </ul>
+
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+<!--<div>-->
+    <!--<nav class="navbar navbar-default navbar-fixed-top">-->
+        <!--<div class="container">-->
+
+            <!--<div class="navbar-header">-->
+                <!--<a href="#" class="navbar-brand"><img src="images/logo.png" style="margin:0; height: 50px"></a>-->
+            <!--</div>-->
+
+            <!--<form class="navbar-form navbar-right">-->
+                <!--<div class="input-group">-->
+                    <!--<input type="text" class="form-control" placeholder="Search....">-->
+                    <!--<span class="input-group-addon"><a href="#"><span class="glyphicon glyphicon-search"></span></a></span>-->
+                <!--</div>-->
+            <!--</form>-->
+
+            <!--<ul class="nav navbar-nav navbar-right">-->
+                <!--<li><a href="#" ng-hide="!logIn"> Welcome back, {{user.name}}!</a></li>-->
+                <!--<li ng-hide="logIn"><a href="#"><span class="glyphicon glyphicon-user"></span><span ng-click="registerOpen()"> Register </span></a></li>-->
+                <!--<li ng-hide="logIn"><a href="#" ng-click="signInopen()">Login</a></li>-->
+                <!--<li ng-hide="!logIn"><a href="#" ng-click="signOut()"><span class="glyphicon glyphicon-remove"></span><span> Sign out </span></a></li>-->
+                <!--<li class="dropdown">-->
+
+                    <!--&lt;!&ndash; cart为空的时候cart不能点击!!??  &ndash;&gt;-->
+                    <!--<a href="#" ng-class='dropdown-toggle' data-toggle="dropdown">-->
+                        <!--<span class="glyphicon glyphicon-shopping-cart"></span>-->
+                        <!--<span ng-click="showCart()"> My Cart </span>-->
+                    <!--</a>-->
+
+                    <!--<ul class="dropdown-menu">-->
+
+                        <!--<li>-->
+                            <!--<table class="table table-hover">-->
+                                <!--<thead>-->
+                                <!--<tr><th>Name</th><th>Qt.</th></tr>-->
+                                <!--</thead>-->
+                                <!--<tbody>-->
+                                <!--<tr ng-repeat="line in myCart.lines" class="info"><td>{{line.label}}</td><td>{{line.quantity}}</td></tr>-->
+                                <!--</tbody>-->
+                            <!--</table>-->
+                        <!--</li>-->
+                        <!--<li class="divider"></li>-->
+                        <!--<li>Total price: {{myCart.totalPrice | currency}}</li>-->
+                        <!--<li class="divider"></li>-->
+                        <!--<li><button class="btn btn-link">Goto my cart</button> <button>Checkout</button></li>-->
+                    <!--</ul>-->
+
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+
+    <!--</nav>-->
+
+<!--</div>-->

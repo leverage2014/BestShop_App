@@ -1,0 +1,51 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <!--<div ui-view="productTypes"></div>-->
+            <!--Products types are loading....-->
+            <div class="row">
+                <div class="col-md-12">
+                    <a ui-sref="#" class="list-group-item active">Categories</a>
+                    <a ui-sref="home.products({productType:100})" class="list-group-item">All</a>
+                    <a ui-sref="home.products({productType:0})" class="list-group-item">Electronics</a>
+                    <a ui-sref="home.products({productType:1})" class="list-group-item">Books</a>
+                    <a ui-sref="home.products({productType:2})" class="list-group-item">Clothes</a>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="col-md-10">-->
+            <!--<div ui-view="productGrid"></div>-->
+            <!--Products lists are loading...-->
+        <!--</div>-->
+
+
+    </div>
+</div>
+
+
+
+<!--<h4>Items list</h4>-->
+<!--<div class="row" >-->
+    <!--<div class="col-sm-6 col-md-6" ng-repeat="item in mall.items">-->
+        <!--<div class="thumbnail">-->
+            <!--<img ng-src="images/{{item.thumbnail}}" alt="{{item.label}}">-->
+            <!--<div class="caption">-->
+                <!--<h3>{{item.label}}-->
+                    <!--<small>{{item.code}}</small>-->
+                <!--</h3>-->
+
+                <!--<h4>-->
+                    <!--{{item.price|currency}}-->
+                <!--</h4>-->
+                <!--<div class="items-details">{{item.description}}</div>-->
+                <!--<p class="text-right">-->
+          <!--<span class="btn btn-primary btn-sm" role="button" ng-click="addToCart(item)" title="Add to Cart"><i-->
+                  <!--class="glyphicon glyphicon-shopping-cart"></i></span>-->
+                    <!--<span class="btn btn-warning btn-sm" role="button" ng-click="mall.buy(item)" title="Purchase">Checkout</span>-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

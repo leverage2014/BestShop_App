@@ -1,0 +1,23 @@
+doctype transitional
+html
+    head
+        meta(http-equiv = 'Content-Type', content = 'text/html; charset=UTF-8')
+        title= subject
+        body
+            h1 Your order #{orderId} is Confirmed!
+            h2 Order is placed on: #{date}
+            h3 Order Details:
+
+            table(style= '12px solid black')
+                tr
+                    td Product_Id
+                    td Product_Name
+                    td Price
+                    td Quantity
+
+                each row, index in details
+                   tr
+                      each val,index in row
+                          td=val
+
+            h2.h2 TotalPrice: $ #{orderTotal}

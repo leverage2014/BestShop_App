@@ -1,0 +1,26 @@
+
+<div class="container-flow">
+    <div class="row">
+        <div class="col-sm-6 col-md-4" ng-repeat="item in products">
+            <div class="thumbnail">
+                <img ng-src="images/{{item.thumbnail}}" alt="{{item.label}}">
+                <div class="caption">
+                    <h3>{{item.label}}
+                        <small>{{item.id}}</small>
+                    </h3>
+                    <h4>
+                        {{item.price | currency}}
+                    </h4>
+                    <div class="items-details">{{item.description}}</div>
+
+                    <p class="text-right">
+                    <span class="btn btn-primary btn-sm" role="button" title="Add to Cart" ng-click="addToCart(item)"><i
+                            class="glyphicon glyphicon-shopping-cart"></i> Add to cart </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

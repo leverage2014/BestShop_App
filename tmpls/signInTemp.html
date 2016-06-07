@@ -1,0 +1,31 @@
+<div class="modal-header">
+    <h3 class="modal-title">Sign In</h3>
+</div>
+
+<div class="modal-body">
+    <form>
+        <p><label>Email</label></p>
+        <p><input type="text" class="form-control" ng-model="user.email"></p>
+
+        <p><label>Password</label></p>
+        <p><input type="password" class="form-control" ng-model="user.password"></p>
+    </form>
+    <!--<p>inputted:</p>-->
+    <!--name: {{user.email}}-->
+    <!--password: {{user.password}}-->
+
+    <a href="#" ng-click="forgetPassord()">Forget Password?</a>
+    <!--<button class="btn btn-primary" ng-click="cancel()">Forget Password?</button>-->
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox">Remember me
+        </label>
+    </div>
+
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
